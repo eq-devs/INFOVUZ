@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rg_background"
+     >
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="375dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:padding="2dp"
+        app:cardBackgroundColor="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
+        app:elevation="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47000003"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/username_edittext_register"
+                android:layout_width="335dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/rounded_edittext_register_login"
+                android:ems="50"
+                android:gravity="center"
+                android:hint="UserName"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                tools:layout_editor_absoluteX="60dp"
+                tools:layout_editor_absoluteY="32dp" />
+
+            <EditText
+                android:id="@+id/email_edittext_reegister"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_edittext_register_login"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/username_edittext_register"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/username_edittext_register"
+                app:layout_constraintTop_toBottomOf="@+id/username_edittext_register" />
+
+            <EditText
+                android:id="@+id/password_edittext_register"
+                android:layout_width="335dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/rounded_edittext_register_login"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="@+id/email_edittext_reegister"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/email_edittext_reegister"
+                app:layout_constraintTop_toBottomOf="@+id/email_edittext_reegister" />
+
+
+            <Button
+                android:id="@+id/registerbutton_button_register"
+                android:layout_width="335dp"
+
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/rounded_button"
+                android:text="Register"
+                app:layout_constraintEnd_toEndOf="@+id/password_edittext_register"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/password_edittext_register"
+                app:layout_constraintTop_toBottomOf="@+id/password_edittext_register" />
+
+            <TextView
+                android:id="@+id/alreeadyhaveaccount_textview"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_margin="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="30dp"
+                android:text="Allready have an account ?"
+                android:textAlignment="center"
+                android:textColor="#0E0D0D"
+                app:layout_constraintEnd_toEndOf="@+id/registerbutton_button_register"
+                app:layout_constraintHorizontal_bias="0.081"
+                app:layout_constraintStart_toStartOf="@+id/registerbutton_button_register"
+                app:layout_constraintTop_toBottomOf="@+id/registerbutton_button_register" />
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/selectphoto_imageview_register"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:civ_border_color="@android:color/holo_green_light"
+        app:civ_border_width="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/selectphoto_button_register"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/rounded_button"
+        android:text="select photo"
+        app:layout_constraintBottom_toBottomOf="@+id/selectphoto_imageview_register"
+        app:layout_constraintEnd_toEndOf="@+id/selectphoto_imageview_register"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/selectphoto_imageview_register"
+        app:layout_constraintTop_toTopOf="@+id/selectphoto_imageview_register" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

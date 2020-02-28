@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#8E8E93</color>
-    <color name="colorPrimaryDark">#8E8E93</color>
-    <color name="colorAccent">#EF6054</color>
+    <color name="colorPrimaryDark">#8E8E95</color>
+    <color name="rg_background">#EF6054</color>
+    <color name="rg_cardview">#FF6E62</color>
+    <color name="rg_button">#FF504B</color>
+    <color name="rg_btn">#FF8481</color>
+
+
+    <color name="rg_input">#ECECEC</color>
+
 </resources>
