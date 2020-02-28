@@ -8,35 +8,35 @@
     android:background="@color/rg_background">
 
     <androidx.cardview.widget.CardView
-        app:elevation="20dp"
-        app:layout_constraintCircleRadius="20dp"
-        app:cardBackgroundColor="20dp"
-
-
-
-
-
-
-        android:layout_width="375dp"
+        android:layout_width="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="3dp"
         android:layout_height="375dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+
+
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="20dp"
+
+        android:layout_marginRight="20dp"
+        android:background="@color/rg_cardview"
+
+        app:cardUseCompatPadding="true"
+        app:elevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircleRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="20dp"
-        android:layout_marginRight="20dp">
+        app:layout_constraintVertical_bias="0.47000003"
+        tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="375dp"
-            android:layout_height="375dp"
-            android:orientation="vertical"
-
-
-            >
+            android:layout_width="373dp"
+            android:layout_height="380dp"
+            android:background="@color/rg_cardview"
+            android:orientation="vertical">
 
             <EditText
                 android:id="@+id/email_edittext_login"
@@ -69,7 +69,7 @@
 
                 android:layout_marginTop="35dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="10dp"
                 android:background="@drawable/rounded_edittext_register_login"
                 android:ems="10"
                 android:hint="Password"

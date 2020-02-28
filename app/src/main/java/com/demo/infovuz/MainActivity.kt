@@ -1,7 +1,10 @@
 package com.demo.infovuz
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
@@ -14,6 +17,13 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import android.view.View
+import androidx.constraintlayout.widget.Group
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentFactory
+import androidx.navigation.fragment.FragmentNavigator
+import com.demo.infovuz.registration.RegisterActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -21,15 +31,31 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        logout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, RegisterActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
+
         val toolbar: Toolbar = findViewById(R.id.navbar)
         setSupportActionBar(toolbar)
         nav_view.setBackgroundColor(Color.rgb(57,87,108))
         //navbar.setBackgroundColor(Color.rgb(57,87,108))
         //toolbar.setBackgroundColor(Color.rgb(57,87,108))
+       // val demo=findViewById<View>(R.layout.fragment_logout)
 
+
+
+       // demo.setOnClickListener {
+         //   FirebaseAuth.getInstance().signOut()
+
+        //}
         /**
          *
          *
@@ -59,6 +85,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
@@ -69,4 +96,7 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+
 }
+

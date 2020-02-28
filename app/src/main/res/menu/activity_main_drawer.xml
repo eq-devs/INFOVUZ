@@ -25,7 +25,7 @@
             android:title="@string/menu_search" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="">
         <menu>
             <item
                 android:id="@+id/nav_help"
@@ -34,8 +34,10 @@
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_logout" />
+                android:title="@string/menu_about" />
+
         </menu>
     </item>
+
 
 </menu>

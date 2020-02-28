@@ -8,7 +8,12 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
+import com.demo.infovuz.MainActivity
 import com.demo.infovuz.R
+import com.demo.infovuz.models.User
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.storage.FirebaseStorage
 
 //import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_register.*
@@ -84,7 +89,7 @@ class RegisterActivity : AppCompatActivity() {
                 if (!it.isSuccessful) return@addOnCompleteListener
 
                 // else if successful
-                Log.d(TAG, "Successfully created user with uid: ${it.result?.user?.uid}")
+               // Log.d(TAG, "Successfully created user with uid: ${it.result.user.uid}")
 
                 uploadImageToFirebaseStorage()
             }
@@ -125,7 +130,7 @@ class RegisterActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 Log.d(TAG, "Finally we saved the user to Firebase Database")
 
-                val intent = Intent(this, LatestMessagesActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(intent)
 
@@ -136,4 +141,3 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 }
-class User(val uid:String, val username:String,val proFileImageUrl :String)
