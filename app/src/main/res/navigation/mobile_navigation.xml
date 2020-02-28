@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_feedback">
+
+    <fragment
+        android:id="@+id/nav_feedback"
+        android:name="com.demo.infovuz.ui.fragment.feedback.HomeFragment"
+        android:label="@string/menu_feedback"
+        tools:layout="@layout/fragment_feedback" />
+
+    <fragment
+        android:id="@+id/nav_univer"
+        android:name="com.demo.infovuz.ui.fragment.universities.GalleryFragment"
+        android:label="@string/menu_univer"
+        tools:layout="@layout/fragment_universities" />
+
+    <fragment
+        android:id="@+id/nav_bookmarks"
+        android:name="com.demo.infovuz.ui.fragment.bookmarks.SlideshowFragment"
+        android:label="@string/menu_bookmarks"
+        tools:layout="@layout/fragment_bookmarks" />
+
+    <fragment
+        android:id="@+id/nav_search"
+        android:name="com.demo.infovuz.ui.fragment.search.ToolsFragment"
+        android:label="@string/menu_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/nav_help"
+        android:name="com.demo.infovuz.ui.fragment.help.ShareFragment"
+        android:label="@string/menu_help"
+        tools:layout="@layout/fragment_help" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.demo.infovuz.ui.fragment.logout.SendFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
+</navigation>
