@@ -5,8 +5,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -18,23 +16,43 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import android.view.View
-import androidx.constraintlayout.widget.Group
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentFactory
-import androidx.navigation.fragment.FragmentNavigator
+import com.demo.infovuz.models.User
 import com.demo.infovuz.registration.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.nav_header_main.view.*
+import org.jetbrains.anko.doAsync
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
 
+    companion object
+
+    {
+        var currentUser: User? = null
+
+    }
+
+    private lateinit var appBarConfiguration: AppBarConfiguration
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+
+
+
+
+
+            FetchCurrentuser()
+
+
 
         logout.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
@@ -42,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
         }
+
 
         val toolbar: Toolbar = findViewById(R.id.navbar)
         setSupportActionBar(toolbar)
@@ -72,6 +91,7 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
+
             setOf(
                 R.id.nav_feedback,
                 R.id.nav_univer,
@@ -96,6 +116,38 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+    fun FetchCurrentuser() {
+        val uid =FirebaseAuth.getInstance().uid
+        val ref =FirebaseDatabase.getInstance().getReference("/users/$uid")
+        ref.addListenerForSingleValueEvent(object :ValueEventListener
+        {
+            override fun onDataChange(p0: DataSnapshot) {
+                currentUser=p0.getValue(User::class.java)
+
+
+                Log.d("m","workssss    +++++++++ " +
+                        "${currentUser?.profileImageUrl}")
+
+                    val header:View =nav_view.getHeaderView(0)
+                    val uri= currentUser?.profileImageUrl
+                    Picasso.get().load(uri).into(header.imageView_nav_heaader)
+                    header.textView_userName.text= currentUser?.username.toString()
+
+
+
+
+            }
+
+            override fun onCancelled(p0: DatabaseError) {
+
+            }
+
+
+        })
+
+
+    }
+
 
 
 }
