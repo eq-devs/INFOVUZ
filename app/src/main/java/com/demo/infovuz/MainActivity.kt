@@ -19,41 +19,38 @@ import android.view.View
 import com.demo.infovuz.models.User
 import com.demo.infovuz.registration.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 import org.jetbrains.anko.doAsync
 
+const val PATH="info"
+const val ID="id"
+const val NAME ="name"
+const val IMAGE="image "
+const val TimeZone="timeZone"
+const val DISCRPTION="discriptin"
+const val PHONE ="phone"
+const val EMAIL="email"
+const val FACEBOOK="facebook"
+const val INSTAGRAM="instagram"
+const val ADDRESS="address"
 class MainActivity : AppCompatActivity() {
 
 
-    companion object
-
-    {
+    companion object {
+        val INFO_KEY="INFO_KEY"
         var currentUser: User? = null
+                        }
 
-    }
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-
-
-
-
-
             FetchCurrentuser()
-
-
-
         logout.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this, RegisterActivity::class.java)

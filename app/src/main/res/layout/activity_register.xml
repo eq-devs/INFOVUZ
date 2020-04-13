@@ -11,16 +11,17 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
-        android:layout_height="375dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_margin="20dp"
+        android:layout_marginTop="96dp"
         android:layout_marginRight="20dp"
         android:background="@color/rg_cardview"
+
         android:gravity="center"
         android:padding="2dp"
-
         app:cardCornerRadius="20dp"
         app:cardUseCompatPadding="true"
         app:elevation="20dp"
@@ -28,8 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47000003"
+        app:layout_constraintTop_toBottomOf="@+id/selectphoto_button_register"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -132,25 +132,23 @@
         android:layout_height="150dp"
         app:civ_border_color="@android:color/holo_green_light"
         app:civ_border_width="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintBottom_toBottomOf="@+id/selectphoto_button_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/selectphoto_button_register"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/selectphoto_button_register"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
         android:background="@drawable/rounded_button"
         android:text="select photo"
-        app:layout_constraintBottom_toBottomOf="@+id/selectphoto_imageview_register"
-        app:layout_constraintEnd_toEndOf="@+id/selectphoto_imageview_register"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/selectphoto_imageview_register"
-        app:layout_constraintTop_toTopOf="@+id/selectphoto_imageview_register" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
