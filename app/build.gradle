@@ -48,8 +48,7 @@ dependencies {
     implementation "org.jetbrains.anko:anko:0.10.8"
     //picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
-    //circleimageview
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
     //groupie
     implementation "com.xwray:groupie:2.8.0"
 }

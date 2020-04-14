@@ -61,9 +61,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:maxImageSize="56dp"
-        android:pointerIcon="all_scroll"
+        android:pointerIcon="context_menu"
 
-        app:srcCompat="@drawable/star"
-        tools:ignore="UnusedAttribute" />
+        app:srcCompat="@drawable/star" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

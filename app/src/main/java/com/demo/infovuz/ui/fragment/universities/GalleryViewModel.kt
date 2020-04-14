@@ -9,22 +9,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class GalleryViewModel : ViewModel() {
-
     private val _text = MutableLiveData<String>().apply {
         value = "This is gallery Fragment"
     value ="List of universities"
-
-
-    fetchInfo()
     }
-
-    val InfoRef: DatabaseReference = FirebaseDatabase.getInstance().getReference(PATH)
-
     val text: LiveData<String> = _text
-
-
-
-}
-fun fetchInfo(){
-
 }
