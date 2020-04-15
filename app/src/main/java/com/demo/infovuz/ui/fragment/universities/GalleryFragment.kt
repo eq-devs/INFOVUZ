@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -25,11 +24,14 @@ import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.fragment_universities.*
 import kotlinx.android.synthetic.main.list_row_universities.view.*
 
+@Suppress("CAST_NEVER_SUCCEEDS")
 class GalleryFragment : Fragment() {
 
 
     private lateinit var galleryViewModel: GalleryViewModel
     private val InfoRef: DatabaseReference = FirebaseDatabase.getInstance().getReference(PATH)
+    var info_data: Info? = null
+
 
     companion object{
         val INFO_KEY="INFO_KEY"
@@ -40,9 +42,9 @@ class GalleryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-
-    ): View? {
+        savedInstanceState: Bundle?): View? {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
         galleryViewModel =
             ViewModelProviders.of(this).get(GalleryViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_universities, container, false)
@@ -58,7 +60,7 @@ class GalleryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView_unive_list.setBackgroundColor(Color.BLUE)
+        var background=recyclerView_unive_list.setBackgroundColor(Color.BLUE)
         recyclerView_unive_list.setHasFixedSize(true)
         recyclerView_unive_list.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
     }
@@ -68,9 +70,9 @@ class GalleryFragment : Fragment() {
         fetchInfo()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-    }
+
+
+
 
     init {}
 
@@ -82,6 +84,7 @@ class GalleryFragment : Fragment() {
         p0.children.forEach{
             Log.d("main","$it.toString()")
             val info=it.getValue(Info::class.java)
+            info_data=info
             if (info!=null){
                 adpter.add(InfoItem(info))}}
         adpter.setOnItemClickListener{item, view ->
