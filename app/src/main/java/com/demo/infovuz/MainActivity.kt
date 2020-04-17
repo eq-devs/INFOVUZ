@@ -132,7 +132,6 @@ doAsync {FetchCurrentuser()}
 
                 Log.d("m","workssss    +++++++++ " +
                         "${currentUser?.profileImageUrl}")
-
                     val header:View =nav_view.getHeaderView(0)
                     val uri= currentUser?.profileImageUrl
                     Picasso.get().load(uri).into(header.imageView_nav_heaader)
