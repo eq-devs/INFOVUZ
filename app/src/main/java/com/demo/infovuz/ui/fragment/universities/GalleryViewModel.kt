@@ -36,7 +36,7 @@ init {
                 Log.d("zeta","$it.toString()****************************")
                 val info=it.getValue(Info::class.java)
                 if (info!=null){
-                    adpter.add(GalleryFragment.InfoItem(info))}}
+                    adpter.add(InfoItemViewHolder(info))}}
 
 
                 adpter.setOnItemClickListener{item, view ->

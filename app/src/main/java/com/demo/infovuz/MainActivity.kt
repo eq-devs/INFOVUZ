@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 import org.jetbrains.anko.doAsync
 
@@ -54,6 +55,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         FirebaseAuth.getInstance()
+
+
 
 
 doAsync {FetchCurrentuser()}
@@ -96,7 +99,7 @@ doAsync {FetchCurrentuser()}
         appBarConfiguration = AppBarConfiguration(
 
             setOf(
-                R.id.nav_feedback,
+               // R.id.nav_feedback,
                 R.id.nav_univer,
                 R.id.nav_bookmarks,
                 R.id.nav_search,
@@ -104,6 +107,7 @@ doAsync {FetchCurrentuser()}
                 R.id.nav_logout
             ), drawerLayout
         )
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
@@ -113,6 +117,8 @@ doAsync {FetchCurrentuser()}
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
+
+
 
     }
 
