@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Button"
+        android:text="Feedback"
 
         app:layout_constraintEnd_toEndOf="@+id/animation_view"
         app:layout_constraintStart_toStartOf="@+id/animation_view"

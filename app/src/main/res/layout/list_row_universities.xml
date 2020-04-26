@@ -48,22 +48,24 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/add_bookmarks_univerlist"
         android:layout_width="55dp"
         android:layout_height="57dp"
         android:foregroundGravity="center|fill"
+        android:pointerIcon="all_scroll"
         android:scaleType="center"
         app:borderWidth="1dp"
         app:elevation="10dp"
         app:fabSize="auto"
+        app:lottie_autoPlay="true"
         app:layout_constraintBottom_toBottomOf="@+id/cardView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:lottie_rawRes="@raw/ok"
         app:maxImageSize="56dp"
-        android:pointerIcon="all_scroll"
-
-        app:srcCompat="@drawable/star"
         tools:ignore="UnusedAttribute" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".ui.fragment.DetailPage.DetailPage"></activity>
+        <activity android:name=".ui.fragment.DetailPage.DetailPage"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

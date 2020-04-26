@@ -1,12 +1,15 @@
 package com.demo.infovuz
 
 import android.annotation.SuppressLint
+import android.app.PendingIntent.getActivity
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -99,7 +102,7 @@ doAsync {FetchCurrentuser()}
         appBarConfiguration = AppBarConfiguration(
 
             setOf(
-               // R.id.nav_feedback,
+                R.id.nav_feedback,
                 R.id.nav_univer,
                 R.id.nav_bookmarks,
                 R.id.nav_search,
@@ -158,7 +161,9 @@ doAsync {FetchCurrentuser()}
 
     }
 
-
+    private fun demo() {
+        Toast.makeText(this,"demo", Toast.LENGTH_SHORT).show()
+    }
 
 }
 

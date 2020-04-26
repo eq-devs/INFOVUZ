@@ -18,8 +18,11 @@ data class Info(
     val email:String="",
     val facebook:String="",
     val instagram:String="",
-    val address:String=""
-) : Parcelable {}
+    val address:String="",
+    var check :Boolean?=null
+) : Parcelable {
+
+}
 
 /*
 

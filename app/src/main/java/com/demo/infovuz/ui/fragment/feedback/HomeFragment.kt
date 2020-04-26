@@ -1,6 +1,7 @@
 package com.demo.infovuz.ui.fragment.feedback
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,14 +35,14 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btn_feedback.setOnClickListener {
-
-
-            val mailClient = Intent(Intent.ACTION_VIEW)
-            mailClient.setClassName(
-                "com.google.android.gm",
-                "com.google.android.gm.ConversationListActivity"
+            val emailIntent = Intent(
+                Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", "abc@gmail.com", null
+                )
             )
-            startActivity(mailClient)
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject")
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Body")
+            startActivity(Intent.createChooser(emailIntent, "Send email..."))
         }
 
     }
