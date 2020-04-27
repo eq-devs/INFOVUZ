@@ -10,7 +10,7 @@ import com.google.firebase.database.*
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 private val InfoRef: DatabaseReference = FirebaseDatabase.getInstance().getReference(PATH)
-class GalleryViewModel: ViewModel() {
+class UniverListViewModel: ViewModel() {
 
     //
   /*  var pontosFiltrados = MutableLiveData(mutableListOf<Info>())
@@ -28,7 +28,7 @@ init {
 }}
 
 
- fun fetchData(){
+ private fun fetchData(){
     InfoRef.addListenerForSingleValueEvent(object : ValueEventListener {
         override fun onDataChange(p0: DataSnapshot) {
             val adpter=GroupAdapter<GroupieViewHolder>()
@@ -37,8 +37,6 @@ init {
                 val info=it.getValue(Info::class.java)
                 if (info!=null){
                     adpter.add(InfoItemViewHolder(info))}}
-
-
                 adpter.setOnItemClickListener{item, view ->
              //   Toast.makeText(context,"Later....",Toast.LENGTH_SHORT).show()
             }

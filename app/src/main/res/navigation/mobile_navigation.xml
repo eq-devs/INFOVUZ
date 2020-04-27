@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/nav_univer"
-        android:name="com.demo.infovuz.ui.fragment.universities.GalleryFragment"
+        android:name="com.demo.infovuz.ui.fragment.universities.UnniverListFragment"
         android:label="@string/menu_univer"
         tools:layout="@layout/fragment_universities" />
 
     <fragment
         android:id="@+id/nav_bookmarks"
-        android:name="com.demo.infovuz.ui.fragment.bookmarks.SlideshowFragment"
+        android:name="com.demo.infovuz.ui.fragment.bookmarks.bookmarksFragment"
         android:label="@string/menu_bookmarks"
         tools:layout="@layout/fragment_bookmarks" />
 

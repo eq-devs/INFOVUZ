@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,7 +7,6 @@
     android:layout_margin="7dp">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         app:cardCornerRadius="9dp"
@@ -21,46 +19,38 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView_untverImage"
+                android:id="@+id/imageView_bookmarksImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="TODO"
                 android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/progress_horizontal" />
-
-            <TextView
-                android:id="@+id/textView_univer_name_detail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TextView"
-                android:textColor="#F4F2F2"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                app:fontFamily="sans-serif-smallcaps"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView_untverImage"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/imageView_untverImage" />
-
             <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/add_bookmarks_univerlist"
+                android:id="@+id/delete_bookmarks_univerlist"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
-
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.503"
-                app:lottie_rawRes="@raw/ok" />
+                app:lottie_rawRes="@raw/delete" />
+
+            <TextView
+                android:id="@+id/textView_univername_bookmarks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_bookmarksImage"
+                app:layout_constraintEnd_toEndOf="@+id/imageView_bookmarksImage"
+                app:layout_constraintStart_toStartOf="@+id/imageView_bookmarksImage"
+                app:layout_constraintTop_toTopOf="@+id/imageView_bookmarksImage" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

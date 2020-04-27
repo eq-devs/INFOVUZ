@@ -9,6 +9,9 @@ import kotlinx.android.synthetic.main.activity_detail_page.*
 
 class DetailPage : AppCompatActivity() {
 
+    companion object {
+        val INFO_KEY = "INFO_KEY"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_page)
