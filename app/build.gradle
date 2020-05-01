@@ -54,4 +54,5 @@ dependencies {
     implementation "com.xwray:groupie:2.8.0"
     //Lottie
     implementation "com.airbnb.android:lottie:3.4.0"
+
 }
