@@ -1,15 +1,12 @@
 package com.demo.infovuz
 
 import android.annotation.SuppressLint
-import android.app.PendingIntent.getActivity
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -28,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.nav_header_main.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 import org.jetbrains.anko.doAsync
 
@@ -61,13 +58,19 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
 doAsync {FetchCurrentuser()}
+
+        imageView_setting?.setOnClickListener {
+
+            /*val intent = Intent(this, SettingsFragment::class.java)
+            startActivity(intent)*/
+        }
         logout.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
             val intent = Intent(this, RegisterActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
+
         }
 
 
@@ -76,7 +79,7 @@ doAsync {FetchCurrentuser()}
         nav_view.setBackgroundColor(Color.rgb(57,87,108))
         //navbar.setBackgroundColor(Color.rgb(57,87,108))
         //toolbar.setBackgroundColor(Color.rgb(57,87,108))
-       // val demo=findViewById<View>(R.layout.fragment_logout)
+       // val demo=findViewById<View>(R.layout.fragment_about)
 
 
 
@@ -161,9 +164,6 @@ doAsync {FetchCurrentuser()}
 
     }
 
-    private fun demo() {
-        Toast.makeText(this,"demo", Toast.LENGTH_SHORT).show()
-    }
 
 }
 

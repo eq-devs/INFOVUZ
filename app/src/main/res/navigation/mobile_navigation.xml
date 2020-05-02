@@ -31,13 +31,13 @@
 
     <fragment
         android:id="@+id/nav_help"
-        android:name="com.demo.infovuz.ui.fragment.help.ShareFragment"
+        android:name="com.demo.infovuz.ui.fragment.help.HelpFragment"
         android:label="@string/menu_help"
         tools:layout="@layout/fragment_help" />
 
     <fragment
         android:id="@+id/nav_logout"
-        android:name="com.demo.infovuz.ui.fragment.logout.SendFragment"
+        android:name="com.demo.infovuz.ui.fragment.About.AboutFragment"
         android:label="@string/menu_about"
-        tools:layout="@layout/fragment_logout" />
+        tools:layout="@layout/fragment_about" />
 </navigation>

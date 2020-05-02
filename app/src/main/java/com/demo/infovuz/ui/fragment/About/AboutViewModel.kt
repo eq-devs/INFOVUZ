@@ -1,13 +1,15 @@
-package com.demo.infovuz.ui.fragment.help
+package com.demo.infovuz.ui.fragment.About
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ShareViewModel : ViewModel() {
+class AboutViewModel : ViewModel() {
+
+
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is share Fragment"
+        value = "This is send Fragment"
     }
     val text: LiveData<String> = _text
 }
