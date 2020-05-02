@@ -51,7 +51,7 @@ class SearchFragment : Fragment() {
         SearchEditTtext=find(R.id.searcEditText)
         RecyclerView=find(R.id.recyclerView_search)
         RecyclerView.setHasFixedSize(true)
-        RecyclerView.setBackgroundColor(Color.CYAN)
+       // RecyclerView.setBackgroundColor(Color.CYAN)
         SearchEditTtext.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
                  firebaseEventSearch(s.toString())

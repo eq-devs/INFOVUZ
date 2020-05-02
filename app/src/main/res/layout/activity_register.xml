@@ -8,6 +8,7 @@
     android:background="@color/rg_background"
      >
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
@@ -71,7 +72,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/username_edittext_register"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/username_edittext_register"
-                app:layout_constraintTop_toBottomOf="@+id/username_edittext_register" />
+                app:layout_constraintTop_toBottomOf="@+id/username_edittext_register"
+                android:layout_gravity="center_horizontal" />
 
             <EditText
                 android:id="@+id/password_edittext_register"
@@ -87,7 +89,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/email_edittext_reegister"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/email_edittext_reegister"
-                app:layout_constraintTop_toBottomOf="@+id/email_edittext_reegister" />
+                app:layout_constraintTop_toBottomOf="@+id/email_edittext_reegister"
+                android:layout_gravity="center_horizontal" />
 
 
             <Button
@@ -118,7 +121,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/registerbutton_button_register"
                 app:layout_constraintHorizontal_bias="0.081"
                 app:layout_constraintStart_toStartOf="@+id/registerbutton_button_register"
-                app:layout_constraintTop_toBottomOf="@+id/registerbutton_button_register" />
+                app:layout_constraintTop_toBottomOf="@+id/registerbutton_button_register"
+                android:layout_gravity="center_horizontal" />
 
 
         </LinearLayout>
@@ -150,5 +154,17 @@
         app:layout_constraintStart_toStartOf="@+id/selectphoto_imageview_register"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view_re"
+        android:layout_width="219dp"
+        android:layout_height="181dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:lottie_loop="true"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/selectphoto_imageview_register"
+        app:layout_constraintVertical_bias="1.0"
+        app:lottie_rawRes="@raw/loading2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 

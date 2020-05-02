@@ -55,7 +55,7 @@ class bookmarksFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView_bookmarks_list.setBackgroundColor(Color.GREEN)
+      ///  recyclerView_bookmarks_list.setBackgroundColor(Color.GREEN)
         recyclerView_bookmarks_list.setHasFixedSize(true)
 
         recyclerView_bookmarks_list.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))

@@ -32,8 +32,7 @@ class UnniverListFragment : Fragment() {
         savedInstanceState: Bundle?): View? {
         super.onCreate(savedInstanceState)
         retainInstance = true
-        univerlistViewModel =
-            ViewModelProviders.of(this).get(UniverListViewModel::class.java)
+        univerlistViewModel =            ViewModelProviders.of(this).get(UniverListViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_universities, container, false)
        //val textView: TextView = root.findViewById(R.id.text_gallery)
         val rec:RecyclerView=root.findViewById(R.id.recyclerView_unive_list)
@@ -50,7 +49,7 @@ class UnniverListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView_unive_list.setBackgroundColor(Color.BLUE)
+      //  recyclerView_unive_list.setBackgroundColor(Color.BLUE)
         recyclerView_unive_list.setHasFixedSize(true)
         recyclerView_unive_list.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
    ///recyclerView_unive_list.adapter= this.adpter
@@ -73,7 +72,7 @@ class UnniverListFragment : Fragment() {
 
             if (info!=null){
                 adpter.add(InfoItemViewHolder(info!!))}}
-               recyclerView_unive_list.adapter=adpter
+               recyclerView_unive_list?.adapter=adpter
     }
             override fun onCancelled(p0: DatabaseError) {}
         })}

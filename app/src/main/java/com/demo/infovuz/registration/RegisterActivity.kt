@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.demo.infovuz.MainActivity
 import com.demo.infovuz.R
@@ -28,8 +29,8 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-
         registerbutton_button_register.setOnClickListener {
+            animation_view_re.playAnimation()
             performRegister()
         }
 
@@ -76,6 +77,7 @@ class RegisterActivity : AppCompatActivity() {
         val email = email_edittext_reegister.text.toString()
         val password = password_edittext_register.text.toString()
 
+        animation_view_re.playAnimation()
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Please enter text in email/pw", Toast.LENGTH_SHORT).show()
             return
@@ -137,6 +139,7 @@ class RegisterActivity : AppCompatActivity() {
 
             }
             .addOnFailureListener {
+                animation_view_re.visibility=View.GONE
                 Log.d(TAG, "Failed to set value to database: ${it.message}")
             }
     }

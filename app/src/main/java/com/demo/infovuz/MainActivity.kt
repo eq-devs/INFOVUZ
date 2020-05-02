@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        verifyUserIsLoggedIn()
         FirebaseAuth.getInstance()
 
 
@@ -146,8 +147,10 @@ doAsync {FetchCurrentuser()}
                         "${currentUser?.profileImageUrl}")
                     val header:View =nav_view.getHeaderView(0)
                     val uri= currentUser?.profileImageUrl
-                    Picasso.get().load(uri).into(header.imageView_nav_heaader)
-                    header.textView_userName.text= currentUser?.username.toString()
+                    if (uri!=null){
+                        Picasso.get()?.load(uri)?.into(header.imageView_nav_heaader)
+                    }
+                header.textView_userName.text= currentUser?.username.toString()
 
 
 
@@ -163,7 +166,14 @@ doAsync {FetchCurrentuser()}
 
 
     }
-
+    private fun verifyUserIsLoggedIn() {
+        val uid = FirebaseAuth.getInstance().uid
+        if (uid == null) {
+            val intent = Intent(this, RegisterActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        }
+    }
 
 }
 

@@ -3,6 +3,7 @@ package com.demo.infovuz.registration
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.demo.infovuz.MainActivity
@@ -10,16 +11,22 @@ import com.demo.infovuz.R
 import com.google.firebase.auth.FirebaseAuth
 
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.view.*
 
 class LoginActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        animation_view.visibility = View.GONE
 
 
         login_button_login.setOnClickListener {
             performLogin()
+            animation_view.visibility = View.VISIBLE
+
+            animation_view.playAnimation()
+
         }
 
         back_to_register_textview.setOnClickListener{
@@ -37,6 +44,7 @@ class LoginActivity: AppCompatActivity() {
         }
 
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+
             .addOnCompleteListener {
                 if (!it.isSuccessful) return@addOnCompleteListener
 
@@ -49,6 +57,10 @@ class LoginActivity: AppCompatActivity() {
                 finish()
             }
             .addOnFailureListener {
+                animation_view.
+                    //  animation_view.setRotation(180);//instead of the RotateAnimation, only works in API Level 11
+                animation_view.visibility = View.GONE
+
                 Toast.makeText(this, "Failed to log in: ${it.message}", Toast.LENGTH_SHORT).show()
             }
     }
