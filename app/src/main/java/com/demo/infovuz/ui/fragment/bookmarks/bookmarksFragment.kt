@@ -12,9 +12,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.demo.infovuz.MainActivity.Companion.INFO_KEY
 import com.demo.infovuz.R
 import com.demo.infovuz.models.Info
-import com.demo.infovuz.ui.fragment.DetailPage.DetailPage
+import com.demo.infovuz.ui.fragment.DetailPage.DetailActivity
+import com.demo.infovuz.ui.fragment.universities.InfoItemViewHolder.Companion.INFO_KEY
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot
@@ -62,9 +64,9 @@ class bookmarksFragment : Fragment() {
 
         adapter.setOnItemClickListener { item, view ->
             Log.d("TAG", "workssss")
-            val intent = Intent(context, DetailPage::class.java)
+            val intent = Intent(context, DetailActivity::class.java)
             val row = item as BookmarksViewHolder
-            intent.putExtra(DetailPage.INFO_KEY, row.info)
+            intent.putExtra("info", row.info)
             startActivity(intent)
         }
         FetchBokkmarksInfo()

@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.demo.infovuz.R
-import com.demo.infovuz.ui.fragment.DetailPage.DetailPage
 import com.demo.infovuz.ui.fragment.DetailPage.Detail_help
 import kotlinx.android.synthetic.main.fragment_help.*
 

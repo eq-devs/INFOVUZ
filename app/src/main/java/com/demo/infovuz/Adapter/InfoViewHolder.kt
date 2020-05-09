@@ -6,8 +6,5 @@ import kotlinx.android.extensions.LayoutContainer
 
 class InfoViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView)
     , LayoutContainer {
-    fun bind(info: Info, editClickListener: View.OnClickListener, deleteClickListener: View.OnClickListener) {
-        val id_n:String
 
-    }
 }

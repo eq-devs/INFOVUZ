@@ -1,10 +1,9 @@
 package com.demo.infovuz.ui.fragment.bookmarks
 
 import android.content.Intent
-import android.os.Build
 import com.demo.infovuz.R
 import com.demo.infovuz.models.Info
-import com.demo.infovuz.ui.fragment.DetailPage.DetailPage
+import com.demo.infovuz.ui.fragment.DetailPage.DetailActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.squareup.picasso.Picasso
@@ -29,10 +28,10 @@ val adapter: GroupAdapter<GroupieViewHolder>,
          Picasso.get().load(info.image).into(viewHolder.itemView.imageView_bookmarksImage)
          viewHolder.itemView.textView_univername_bookmarks.text=info.name
          viewHolder.itemView.setOnClickListener {
-             val intent = Intent( viewHolder.itemView.context, DetailPage::class.java)
-             intent.putExtra("image",info?.image)
+             val intent = Intent( viewHolder.itemView.context, DetailActivity::class.java)
+         /*    intent.putExtra("image",info?.image)
              intent.putExtra("dis" ,info?.discriptin)
-             intent.putExtra("title",info?.name)
+             intent.putExtra("title",info?.name)*/
              viewHolder.itemView.context?.startActivity(intent)
          }
          viewHolder.itemView.delete_bookmarks_univerlist.setOnClickListener {
