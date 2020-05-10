@@ -29,9 +29,7 @@ val adapter: GroupAdapter<GroupieViewHolder>,
          viewHolder.itemView.textView_univername_bookmarks.text=info.name
          viewHolder.itemView.setOnClickListener {
              val intent = Intent( viewHolder.itemView.context, DetailActivity::class.java)
-         /*    intent.putExtra("image",info?.image)
-             intent.putExtra("dis" ,info?.discriptin)
-             intent.putExtra("title",info?.name)*/
+             intent.putExtra("info",info)
              viewHolder.itemView.context?.startActivity(intent)
          }
          viewHolder.itemView.delete_bookmarks_univerlist.setOnClickListener {

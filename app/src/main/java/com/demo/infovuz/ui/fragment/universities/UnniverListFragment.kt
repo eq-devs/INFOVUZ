@@ -1,12 +1,10 @@
 package com.demo.infovuz.ui.fragment.universities
 
-import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -62,8 +60,10 @@ class UnniverListFragment : Fragment() {
    fetchInfo()
     }
     private fun fetchInfo(){
+        nature.playAnimation()
         InfoRef.addListenerForSingleValueEvent(object : ValueEventListener {
     override fun onDataChange(p0: DataSnapshot) {
+        nature.visibility=View.GONE
         val adpter=GroupAdapter<GroupieViewHolder>()
         p0.children.forEach{
             info=it.getValue(Info::class.java)
@@ -75,7 +75,9 @@ class UnniverListFragment : Fragment() {
 
 
     }
-            override fun onCancelled(p0: DatabaseError) {}
+            override fun onCancelled(p0: DatabaseError) {
+                nature.playAnimation()
+            }
         })}
 
 

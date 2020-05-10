@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:gravity="center">
+    android:gravity="center"
+    android:id="@+id/backgroun">
 
 
     <EditText
@@ -19,6 +20,19 @@
         android:gravity="center"
         android:hint="Enter what you want"
         android:inputType="textPersonName" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/nature"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:lottie_loop="true"
+        app:lottie_speed="2.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/nature" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_search"

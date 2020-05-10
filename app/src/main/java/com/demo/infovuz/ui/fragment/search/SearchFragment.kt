@@ -1,5 +1,6 @@
 package com.demo.infovuz.ui.fragment.search
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -46,7 +47,9 @@ class SearchFragment : Fragment() {
         return root
     }
 
+    @SuppressLint("ResourceType")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
+        nature.playAnimation()
         super.onActivityCreated(savedInstanceState)
         SearchEditTtext=find(R.id.searcEditText)
         RecyclerView=find(R.id.recyclerView_search)
@@ -55,6 +58,8 @@ class SearchFragment : Fragment() {
         SearchEditTtext.addTextChangedListener(object : TextWatcher{
             override fun afterTextChanged(s: Editable?) {
                  firebaseEventSearch(s.toString())
+                nature.visibility=View.GONE
+
             }
 
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -75,6 +80,7 @@ class SearchFragment : Fragment() {
             .endAt(name.toLowerCase() + "uf8ff")
         eventSearchQuery.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(it: DataSnapshot) {
+                nature.visibility=View.GONE
                 val adapter= GroupAdapter<GroupieViewHolder>()
                 /*for (eventSnapshot in it.children) {
                     val event: Event? = eventSnapshot.getValue(Event::class.java)
