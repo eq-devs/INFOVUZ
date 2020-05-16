@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="#F7F7F7"
     android:orientation="vertical"
     tools:context=".ui.fragment.DetailPage.DetailActivity">
 
@@ -75,7 +75,8 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="@+id/imageView"
-                    app:layout_constraintVertical_bias="0.32999998" />
+                    app:layout_constraintVertical_bias="0.32999998"
+                    tools:targetApi="lollipop" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -120,11 +121,12 @@
                         android:layout_height="wrap_content"
                         android:alwaysDrawnWithCache="true"
                         android:animationCache="true"
-                        android:background="#00BCD4"
+                        android:background="#A0A0A0"
                         android:clipChildren="true"
-                        android:fadeScrollbars="true"
+                        android:fadeScrollbars="false"
                         android:focusable="auto"
-                        android:orientation="horizontal" />
+                        android:orientation="horizontal"
+                        android:saveEnabled="true" />
 
                     <FrameLayout
                         android:id="@android:id/tabcontent"
@@ -156,20 +158,18 @@
                                 app:layout_constraintTop_toBottomOf="@+id/textView7"
                                 tools:ignore="HardcodedText" />
 
-                                <com.airbnb.lottie.LottieAnimationView
-                                    android:id="@+id/more_detail"
-                                    android:layout_width="55dp"
-                                    android:layout_height="55dp"
-                                    android:layout_gravity="end|center_horizontal"
-                                    android:foregroundGravity="center|bottom"
-                                    app:layout_constraintVertical_bias="0.503"
-                                    app:lottie_autoPlay="true"
-                                    android:padding="7dp"
-                                    android:layout_margin="10dp"
-                                    app:lottie_loop="true"
-                                    app:lottie_rawRes="@raw/more" />
-
-
+                            <com.airbnb.lottie.LottieAnimationView
+                                android:id="@+id/more_detail"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
+                                android:layout_gravity="end|center_horizontal"
+                                android:layout_margin="10dp"
+                                android:foregroundGravity="center|bottom"
+                                android:padding="7dp"
+                                app:layout_constraintVertical_bias="0.503"
+                                app:lottie_autoPlay="true"
+                                app:lottie_loop="true"
+                                app:lottie_rawRes="@raw/more" />
 
 
                         </LinearLayout>

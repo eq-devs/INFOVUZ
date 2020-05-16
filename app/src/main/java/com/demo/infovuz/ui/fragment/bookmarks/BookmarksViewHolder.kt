@@ -34,7 +34,6 @@ val adapter: GroupAdapter<GroupieViewHolder>,
          }
          viewHolder.itemView.delete_bookmarks_univerlist.setOnClickListener {
              DeleteBookmarks(info,viewHolder,adapter,position)
-//bookmarksFragment().DeleteBookmarks(info)
          }
 
       }
