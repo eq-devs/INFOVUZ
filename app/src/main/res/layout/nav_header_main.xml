@@ -37,16 +37,19 @@
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/imageView_nav_heaader"
         app:layout_constraintStart_toStartOf="@+id/imageView_nav_heaader"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_nav_heaader" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView_nav_heaader"
+        tools:ignore="UnknownIdInLayout" />
 
-
-    <ImageView
-        android:id="@+id/imageView_setting"
+    <Button
+        android:id="@+id/btn_setting"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/textView_userName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,4 +40,8 @@
         android:name="com.demo.infovuz.ui.fragment.About.AboutFragment"
         android:label="@string/menu_about"
         tools:layout="@layout/fragment_about" />
+    <activity
+        android:id="@+id/settingsActivity"
+        android:name="com.demo.infovuz.ui.fragment.SettingsActivity"
+        android:label="SettingsActivity" />
 </navigation>

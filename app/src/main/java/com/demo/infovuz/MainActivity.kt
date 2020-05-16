@@ -1,5 +1,6 @@
 package com.demo.infovuz
 
+
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
@@ -17,6 +18,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.demo.infovuz.models.User
 import com.demo.infovuz.registration.RegisterActivity
+import com.demo.infovuz.ui.fragment.SettingsActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -29,63 +31,60 @@ import kotlinx.android.synthetic.main.nav_header_main.*
 import kotlinx.android.synthetic.main.nav_header_main.view.*
 import org.jetbrains.anko.doAsync
 
-const val PATH="info"
-const val ID="id"
-const val NAME ="name"
-const val IMAGE="image "
-const val TimeZone="timeZone"
-const val DISCRPTION="discriptin"
-const val PHONE ="phone"
-const val EMAIL="email"
-const val FACEBOOK="facebook"
-const val INSTAGRAM="instagram"
-const val ADDRESS="address"
+
+const val PATH = "info"
+const val ID = "id"
+const val NAME = "name"
+const val IMAGE = "image "
+const val TimeZone = "timeZone"
+const val DISCRPTION = "discriptin"
+const val PHONE = "phone"
+const val EMAIL = "email"
+const val FACEBOOK = "facebook"
+const val INSTAGRAM = "instagram"
+const val ADDRESS = "address"
+
 class MainActivity : AppCompatActivity() {
-
-
     companion object {
-        val INFO_KEY="INFO_KEY"
+        val INFO_KEY = "INFO_KEY"
         var currentUser: User? = null
-                        }
+    }
 
     private var auth: FirebaseAuth? = null
     private lateinit var appBarConfiguration: AppBarConfiguration
+
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         verifyUserIsLoggedIn()
         FirebaseAuth.getInstance()
+        doAsync { FetchCurrentuser() }
+        logout.setOnClickListener {
+//            FirebaseAuth.getInstance().signOut()
+//            val intent = Intent(this, RegisterActivity::class.java)
+//            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+//            startActivity(intent)
+            startActivity(Intent(this,SettingsActivity::class.java))
 
-
-
-doAsync {FetchCurrentuser()}
-
-        imageView_setting?.setOnClickListener {
-
-            /*val intent = Intent(this, SettingsFragment::class.java)
-            startActivity(intent)*/
-        }
-        logout.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
-            val intent = Intent(this, RegisterActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
-            startActivity(intent)
 
         }
+
+
+
+
 
 
         val toolbar: Toolbar = findViewById(R.id.navbar)
         setSupportActionBar(toolbar)
-        nav_view.setBackgroundColor(Color.rgb(57,87,108))
+        nav_view.setBackgroundColor(Color.rgb(57, 87, 108))
         //navbar.setBackgroundColor(Color.rgb(57,87,108))
         //toolbar.setBackgroundColor(Color.rgb(57,87,108))
-       // val demo=findViewById<View>(R.layout.fragment_about)
+        // val demo=findViewById<View>(R.layout.fragment_about)
 
 
-
-       // demo.setOnClickListener {
-         //   FirebaseAuth.getInstance().signOut()
+        // demo.setOnClickListener {
+        //   FirebaseAuth.getInstance().signOut()
 
         //}
         /**
@@ -95,15 +94,18 @@ doAsync {FetchCurrentuser()}
 
         val fab: FloatingActionButton = findViewById(R.id.fab)
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        .setAction("Action", null).show()
         }*/
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
+
         appBarConfiguration = AppBarConfiguration(
+
 
             setOf(
                 R.id.nav_feedback,
@@ -117,6 +119,8 @@ doAsync {FetchCurrentuser()}
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+
     }
 
 
@@ -126,7 +130,6 @@ doAsync {FetchCurrentuser()}
         return true
 
 
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -134,25 +137,25 @@ doAsync {FetchCurrentuser()}
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
 
     }
+
     private fun FetchCurrentuser() {
-        val uid =FirebaseAuth.getInstance().uid
-        val ref =FirebaseDatabase.getInstance().getReference("/users/$uid")
-        ref.addListenerForSingleValueEvent(object :ValueEventListener
-        {
+        val uid = FirebaseAuth.getInstance().uid
+        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+        ref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
-                currentUser=p0.getValue(User::class.java)
+                currentUser = p0.getValue(User::class.java)
 
 
-                Log.d("m","workssss    +++++++++ " +
-                        "${currentUser?.profileImageUrl}")
-                    val header:View =nav_view.getHeaderView(0)
-                    val uri= currentUser?.profileImageUrl
-                    if (uri!=null){
-                        Picasso.get()?.load(uri)?.into(header.imageView_nav_heaader)
-                    }
-                header.textView_userName.text= currentUser?.username.toString()
-
-
+                Log.d(
+                    "m", "workssss    +++++++++ " +
+                            "${currentUser?.profileImageUrl}"
+                )
+                val header: View = nav_view.getHeaderView(0)
+                val uri = currentUser?.profileImageUrl
+                if (uri != null) {
+                    Picasso.get()?.load(uri)?.into(header.imageView_nav_heaader)
+                }
+                header.textView_userName.text = currentUser?.username.toString()
 
 
             }
@@ -166,6 +169,7 @@ doAsync {FetchCurrentuser()}
 
 
     }
+
     private fun verifyUserIsLoggedIn() {
         val uid = FirebaseAuth.getInstance().uid
         if (uid == null) {
