@@ -23,15 +23,15 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" >
 
-        <Button
-            android:id="@+id/logout"
-            android:text="Log out"
-            android:layout_width="90dp"
+        <ImageView
+            android:id="@+id/setings"
+            android:layout_width="50dp"
             android:layout_height="50dp"
-            android:textColor="#ffffff"
+            android:layout_gravity="bottom|end"
+            app:srcCompat="@drawable/settings"
+            android:layout_margin="10dp"/>
 
-            android:layout_gravity="right|bottom"
-            app:showAsAction="ifRoom"/>
+
 
     </com.google.android.material.navigation.NavigationView>
 
