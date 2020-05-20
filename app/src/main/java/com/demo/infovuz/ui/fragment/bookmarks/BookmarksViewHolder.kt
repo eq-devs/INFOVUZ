@@ -18,10 +18,6 @@ val adapter: GroupAdapter<GroupieViewHolder>,
                           val bookmarksInfoMap: HashMap<String,
                                   Info>): Item<GroupieViewHolder>() {
 
-
-
-
-
      override fun getLayout(): Int = R.layout.list_row_bookmarks
 
       override fun bind(viewHolder: GroupieViewHolder, position: Int) {

@@ -48,8 +48,11 @@ class DetailActivity : AppCompatActivity() {
             emailIntent.data = Uri.parse("mailto:${info.email}")
             startActivity(Intent.createChooser(emailIntent, "something")) }
         more_detail.setOnClickListener {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("${info.instagram}"))
-            startActivity(i)  }
+            val uri = Uri.parse("https://${info.website}")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+        }
+
 
         //facebook
         imageView_facebook.setOnClickListener {
@@ -66,7 +69,7 @@ class DetailActivity : AppCompatActivity() {
         imageView_insta.setOnClickListener {
             try {
                 val intent = Intent(Intent.ACTION_VIEW)
-                intent.data = Uri.parse("http://instagram.com/_u/" + "${info.instagram}")
+                intent.data = Uri.parse("http://instagram.com/_u/" + info.instagram)
                 intent.setPackage("com.instagram.android")
                 startActivity(intent)
             } catch (anfe: ActivityNotFoundException) {

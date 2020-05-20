@@ -9,19 +9,20 @@
         >
         <item
             android:id="@+id/nav_univer"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/art_track"
             android:title="@string/menu_univer" />
         <item
             android:id="@+id/nav_bookmarks"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/bookmarks"
             android:title="@string/menu_bookmarks" />
         <item
             android:id="@+id/nav_search"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_search" />
+            android:icon="?android:attr/actionModeWebSearchDrawable"
+            android:title="@string/menu_search"
+            tools:targetApi="lollipop" />
         <item
             android:id="@+id/nav_feedback"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/feedback"
             android:title="@string/menu_feedback" />
     </group>
 
@@ -29,11 +30,11 @@
         <menu>
             <item
                 android:id="@+id/nav_help"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/help"
                 android:title="@string/menu_help" />
             <item
                 android:id="@+id/nav_logout"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/us"
                 android:title="@string/menu_about" />
 
         </menu>

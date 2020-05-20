@@ -12,6 +12,7 @@ data class Info(
     var id: String = "",
     var name: String="",
     var image :String="",
+    var website:String="",
     var timestamp: String="",
     val discriptin:String="",
     val phone:String="",

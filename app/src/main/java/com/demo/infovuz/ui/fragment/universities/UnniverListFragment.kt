@@ -63,7 +63,7 @@ class UnniverListFragment : Fragment() {
         nature.playAnimation()
         InfoRef.addListenerForSingleValueEvent(object : ValueEventListener {
     override fun onDataChange(p0: DataSnapshot) {
-        nature.visibility=View.GONE
+        nature?.visibility=View.GONE
         val adpter=GroupAdapter<GroupieViewHolder>()
         p0.children.forEach{
             info=it.getValue(Info::class.java)
