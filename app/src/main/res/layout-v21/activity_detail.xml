@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#04A2EA"
+    android:background="#ABDEEC"
     android:orientation="vertical"
     tools:context=".ui.fragment.DetailPage.DetailActivity">
 
@@ -22,6 +22,7 @@
             android:id="@+id/cardView3"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            app:cardBackgroundColor="#6200ee"
             app:cardCornerRadius="10dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,7 +44,7 @@
                 <TextView
                     android:id="@+id/textView_title_detail"
                     android:layout_width="109dp"
-                    android:layout_height="45dp"
+                    android:layout_height="109dp"
                     android:foregroundGravity="center"
                     android:gravity="center"
                     android:shadowColor="#1B0808"
@@ -99,7 +100,7 @@
                 android:layout_marginTop="32dp"
                 android:shadowColor="#09E809"
                 android:text="ABOUT UNIVERSITY"
-                android:textColor="#F7F7F7"
+                android:textColor="#000000"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:alwaysDrawnWithCache="true"
                         android:animationCache="true"
-                        android:background="#08A9F2"
+                        android:background="#4ab8d4"
                         android:clipChildren="true"
                         android:fadeScrollbars="true"
                         android:focusable="auto"
@@ -136,12 +137,14 @@
                     <FrameLayout
                         android:id="@android:id/tabcontent"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:background="#03dac5">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/tab1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:background="#74A7B5"
                             android:orientation="vertical">
 
                             <TextView
@@ -194,6 +197,7 @@
                             android:id="@+id/tab2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:background="#8EC6D5"
                             android:orientation="vertical">
 
 

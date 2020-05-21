@@ -71,7 +71,8 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById(R.id.navbar)
         setSupportActionBar(toolbar)
-        nav_view.setBackgroundColor(Color.rgb(57, 87, 108))
+       //
+        // nav_view.setBackgroundColor(Color.rgb(57, 87, 108))
         //navbar.setBackgroundColor(Color.rgb(57,87,108))
         //toolbar.setBackgroundColor(Color.rgb(57,87,108))
         // val demo=findViewById<View>(R.layout.fragment_about)

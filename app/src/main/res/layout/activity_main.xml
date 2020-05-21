@@ -19,18 +19,21 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="#f9aa33"
         android:fitsSystemWindows="true"
+        android:outlineAmbientShadowColor="#FFFFFF"
+        android:outlineSpotShadowColor="#6200ee"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" >
+        app:itemTextColor="#DCDADA"
+        app:menu="@menu/activity_main_drawer">
 
         <ImageView
             android:id="@+id/setings"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_gravity="bottom|end"
-            app:srcCompat="@drawable/settings"
-            android:layout_margin="10dp"/>
-
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_margin="10dp"
+            app:srcCompat="@drawable/settings" />
 
 
     </com.google.android.material.navigation.NavigationView>
